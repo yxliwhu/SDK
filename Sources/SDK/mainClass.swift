@@ -150,7 +150,7 @@ public class mianClass{
         self.beaconFile = FileUtils.urlFile("BeaconData")!
         //Record the BLE data every 0.5 second
         if (self.realTime) {
-            self.timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(ViewController.insertBeaconData), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(insertBeaconData), userInfo: nil, repeats: true)
         }
         beaconHelper.setBackBeaconBlock { (pData) in
             if (self.startTime == 0) {
