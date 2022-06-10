@@ -8,7 +8,7 @@
 import CoreLocation
 import Foundation
 
-public class ViewController{
+public class mianClass{
     
     var inScanning:Bool!
     var isInitFunc:Bool!
@@ -294,7 +294,7 @@ public class ViewController{
         return "postEveryBeacon," + c_minor + "," + String(rssi) + "," + String(start) + "," + String(current) + "," + String(index) + "," + "0"
     }
     
-    func printTime(){
+    public func printTime(){
         let date = Date()
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "yyy-MM-dd' at 'HH:mm:ss.SSS"
