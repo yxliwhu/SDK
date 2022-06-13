@@ -1,0 +1,137 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-module-flags: -target arm64-apple-ios15.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SDK
+import CoreBluetooth
+import CoreLocation
+import CoreMotion
+import Foundation
+@_exported import SDK
+import Swift
+import SwiftUI
+import _Concurrency
+public class mianClass {
+  public init()
+  public func getLocationFormPolyU() -> CoreLocation.CLLocation
+  public func startCollectDataset()
+  public func printTime()
+  @objc deinit
+}
+public class CholeskyDecomposition : Swift.Codable {
+  public init(paramMatrix: SDK.Matrix)
+  public func isSPD() -> Swift.Bool
+  public func getL() -> SDK.Matrix
+  public func solve(paramMatrix: SDK.Matrix) throws -> SDK.Matrix
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class SingularValueDecomposition : Swift.Codable {
+  public init(paramMatrix: SDK.Matrix)
+  public func getU() -> SDK.Matrix
+  public func getV() -> SDK.Matrix
+  public func getSingularValues() -> [Swift.Double]
+  public func getS() -> SDK.Matrix
+  public func norm2() -> Swift.Double
+  public func cond() -> Swift.Double
+  public func rank() -> Swift.Int
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class Matrix : Swift.Codable {
+  public var A: [[Swift.Double]]
+  public init(paramInt1: Swift.Int, paramInt2: Swift.Int)
+  public init(paramInt1: Swift.Int, paramInt2: Swift.Int, paramDouble: Swift.Double)
+  public init(paramArrayOfDouble: [[Swift.Double]]) throws
+  public init(paramArrayOfDouble: [[Swift.Double]], paramInt1: Swift.Int, paramInt2: Swift.Int)
+  public init(paramArrayOfDouble: [Swift.Double], paramInt: Swift.Int) throws
+  public static func constructWithCopy(paramArrayOfDouble: [[Swift.Double]]) throws -> SDK.Matrix
+  public func copy() -> SDK.Matrix
+  public func clone() -> Any
+  public func getArray() -> [[Swift.Double]]
+  public func getArrayCopy() -> [[Swift.Double]]
+  public func getColumnPackedCopy() -> [Swift.Double]
+  public func getRowPackedCopy() -> [Swift.Double]
+  public func getRowDimension() -> Swift.Int
+  public func getColumnDimension() -> Swift.Int
+  public func get(paramInt1: Swift.Int, paramInt2: Swift.Int) -> Swift.Double
+  public func getMatrix(paramInt1: Swift.Int, paramInt2: Swift.Int, paramInt3: Swift.Int, paramInt4: Swift.Int) throws -> SDK.Matrix
+  public func getMatrix(paramArrayOfInt1: [Swift.Int], paramArrayOfInt2: [Swift.Int]) throws -> SDK.Matrix
+  public func getMatrix(paramInt1: Swift.Int, paramInt2: Swift.Int, paramArrayOfInt: [Swift.Int]) throws -> SDK.Matrix
+  public func getMatrix(paramArrayOfInt: [Swift.Int], int paramInt1: Swift.Int, int paramInt2: Swift.Int) throws -> SDK.Matrix
+  public func set(paramInt1: Swift.Int, paramInt2: Swift.Int, paramDouble: Swift.Double)
+  public func setMatrix(paramInt1: Swift.Int, paramInt2: Swift.Int, paramInt3: Swift.Int, paramInt4: Swift.Int, paramMatrix: SDK.Matrix)
+  public func setMatrix(paramArrayOfInt1: [Swift.Int], paramArrayOfInt2: [Swift.Int], paramMatrix: SDK.Matrix) throws
+  public func setMatrix(paramArrayOfInt: [Swift.Int], paramInt1: Swift.Int, paramInt2: Swift.Int, paramMatrix: SDK.Matrix) throws
+  public func setMatrix(paramInt1: Swift.Int, paramInt2: Swift.Int, paramArrayOfInt: [Swift.Int], paramMatrix: SDK.Matrix) throws
+  public func transpose() -> SDK.Matrix
+  public func norm1() -> Swift.Double
+  public func norm2() -> Swift.Double
+  public func normInf() -> Swift.Double
+  public func normF() -> Swift.Double
+  public func uminus() -> SDK.Matrix
+  public func plus(paramMatrix: SDK.Matrix) throws -> SDK.Matrix
+  public func plusEquals(paramMatrix: SDK.Matrix) throws -> SDK.Matrix
+  public func minus(paramMatrix: SDK.Matrix) throws -> SDK.Matrix
+  public func minusEquals(paramMatrix: SDK.Matrix) throws -> SDK.Matrix
+  public func arrayTimes(paramMatrix: SDK.Matrix) throws -> SDK.Matrix
+  public func arrayTimesEquals(paramMatrix: SDK.Matrix) throws -> SDK.Matrix
+  public func arrayRightDivide(paramMatrix: SDK.Matrix) throws -> SDK.Matrix
+  public func arrayRightDivideEquals(paramMatrix: SDK.Matrix) throws -> SDK.Matrix
+  public func arrayLeftDivide(paramMatrix: SDK.Matrix) throws -> SDK.Matrix
+  public func arrayLeftDivideEquals(paramMatrix: SDK.Matrix) throws -> SDK.Matrix
+  public func times(paramDouble: Swift.Double) -> SDK.Matrix
+  public func timesEquals(paramDouble: Swift.Double) -> SDK.Matrix
+  public func times(paramMatrix: SDK.Matrix) throws -> SDK.Matrix
+  public func lu() -> SDK.LUDecomposition
+  public func qr() -> SDK.QRDecomposition
+  public func chol() -> SDK.CholeskyDecomposition
+  public func svd() -> SDK.SingularValueDecomposition
+  public func eig() throws -> SDK.EigenvalueDecomposition
+  public func solve(paramMatrix: SDK.Matrix) throws -> SDK.Matrix
+  public func solveTranspose(paramMatrix: SDK.Matrix) throws -> SDK.Matrix
+  public func inverse() throws -> SDK.Matrix
+  public func det() throws -> Swift.Double
+  public func rank() -> Swift.Int
+  public func cond() -> Swift.Double
+  public func trace() -> Swift.Double
+  public static func random(int paramInt1: Swift.Int, int paramInt2: Swift.Int) -> SDK.Matrix
+  public static func identity(paramInt1: Swift.Int, paramInt2: Swift.Int) -> SDK.Matrix
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class LUDecomposition : Swift.Codable {
+  public init(A: SDK.Matrix)
+  public func isNonsingular() -> Swift.Bool
+  public func getL() -> SDK.Matrix
+  public func getU() -> SDK.Matrix
+  public func getPivot() -> [Swift.Int]
+  public func getDoublePivot() -> [Swift.Double]
+  public func det() throws -> Swift.Double
+  public func solve(B: SDK.Matrix) throws -> SDK.Matrix
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class EigenvalueDecomposition : Swift.Codable {
+  public init(Arg: SDK.Matrix) throws
+  public func getV() -> SDK.Matrix
+  public func getRealEigenvalues() -> [Swift.Double]
+  public func getImagEigenvalues() -> [Swift.Double]
+  public func getD() -> SDK.Matrix
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class QRDecomposition : Swift.Codable {
+  public init(paramMatrix: SDK.Matrix)
+  public func isFullRank() -> Swift.Bool
+  public func getH() -> SDK.Matrix
+  public func getR() -> SDK.Matrix
+  public func getQ() -> SDK.Matrix
+  public func solve(paramMatrix: SDK.Matrix) throws -> SDK.Matrix
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
